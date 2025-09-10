@@ -1,0 +1,21 @@
+tests:
+  - url: "https://www.google-analytics.com/g/collect"
+    name: "Test Case One: I should PASS"
+    deps:
+      - key: "ep.event_category"
+        value: "page"
+    compare:
+      - key: "ep.pageName"
+        value: "Learn More:Customer Journey Analytics"
+      - key: "dt"
+        value: "Adobe Customer Journey Analytics (CJA)"
+  - url: "https://www.google-analytics.com/g/collect"
+    name: "Test Case Two: I should FAIL"
+    deps:
+      - key: "ep.event_category"
+        value: "page"
+    compare:
+      - key: "ep.pageName"
+        value: "Learn More:Customer Journey Analytics"
+      - key: "dt"
+        value: "foo bar"
